@@ -6,7 +6,7 @@
 (def input
   (slurp (io/resource "dayoneinput.txt")))
 
-(def paresed-input (str/split input #"\n\n"))
+(def parsed-input (str/split input #"\n\n"))
 
 (defn innermap
   [coll]
@@ -14,9 +14,19 @@
        (mapv #(read-string %))
        (reduce +)))
 
-(->> paresed-input
-     (mapv #(str/split % #"\n"))
-     (mapv #(innermap %))
-     (sort >)
-     (take 3)
-     (reduce +))
+(defn part-one
+  [coll]
+  (->> coll
+       (mapv #(str/split % #"\n"))
+       (mapv #(innermap %))
+       (sort >)
+       (apply max)))
+
+(defn part-two
+  [coll]
+  (->> coll
+       (mapv #(str/split % #"\n"))
+       (mapv #(innermap %))
+       (sort >)
+       (take 3)
+       (reduce +)))
