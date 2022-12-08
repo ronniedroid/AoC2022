@@ -1,10 +1,8 @@
 (ns ronniedroid.dayone
   (:gen-class)
-  (:require [clojure.java.io :as io]
-            [clojure.string :as str]))
+  (:require [clojure.string :as str]))
 
-(def input
-  (slurp (io/resource "dayoneinput.txt")))
+(def input (slurp "resources/dayoneinput.txt"))
 
 (def parsed-input (str/split input #"\n\n"))
 

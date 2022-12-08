@@ -1,11 +1,9 @@
 (ns ronniedroid.dayfour
   (:gen-class)
-  (:require [clojure.java.io :as io]
-            [clojure.string :as str]
+  (:require [clojure.string :as str]
             [clojure.set :as set]))
 
-(def input
-  (slurp (io/resource "dayfourinput.txt")))
+(def input (slurp "resources/dayfourinput.txt"))
 
 (defn get-pairs
   [coll]

@@ -1,10 +1,8 @@
 (ns ronniedroid.daysix
   (:gen-class)
-  (:require [clojure.java.io :as io]
-            [clojure.string :as str]))
+  (:require [clojure.string :as str]))
 
-(def input
-  (slurp (io/resource "daysixinput.txt")))
+(def input (slurp "resources/daysixinput.txt"))
 
 (defn find-start-of
   [coll subroutine]

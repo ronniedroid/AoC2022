@@ -1,10 +1,8 @@
 (ns ronniedroid.dayfive
   (:gen-class)
-  (:require [clojure.java.io :as io]
-            [clojure.string :as str]))
+  (:require [clojure.string :as str]))
 
-(def input
-  (slurp (io/resource "dayfiveinput.txt")))
+(def input (slurp "resources/dayfiveinput.txt"))
 
 (def crates
   (-> (str/replace input #"\[|\]" " ")

@@ -1,10 +1,8 @@
 (ns ronniedroid.daythree
   (:gen-class)
-  (:require [clojure.java.io :as io]
-            [clojure.string :as str]))
+  (:require [clojure.string :as str]))
 
-(def input
-  (slurp (io/resource "daythreeinput.txt")))
+(def input (slurp "resources/daythreeinput.txt"))
 
 (def abc
   (->
